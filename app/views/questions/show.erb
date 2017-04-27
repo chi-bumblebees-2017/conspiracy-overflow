@@ -1,0 +1,8 @@
+<div>
+  <%= erb :_errors, locals: { errors: @errors } if @errors %>
+  <h2><%= @question.title %></h2>
+  <div class="question-vote-form"><%= erb :_vote_form, locals: { votable: @question } %>
+  <p id="question-body"><%= @question.body %></p>
+  <%= erb :_comment_list, locals: { commentable: @question } %>
+  <%= erb :_answer_list, locals: { question: @question } %>
+</div>
