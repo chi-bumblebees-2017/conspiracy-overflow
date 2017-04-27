@@ -10,6 +10,7 @@ post '/sessions' do
     redirect "/questions"
   else
     @errors = ["The CIA manipulating your data. Try again"]
+    # @errors = new_user.errors.full_messages
     erb :'sessions/new'
   end
 end
