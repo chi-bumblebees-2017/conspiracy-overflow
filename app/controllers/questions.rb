@@ -1,8 +1,12 @@
+get '/questions' do
+  @questions = Question.all
+  erb :"questions/index"
+end
+
 get '/questions/new' do
   # TODO: check_login
   erb :'questions/new'
 end
-
 
 post '/questions' do
   # TODO: check_login
