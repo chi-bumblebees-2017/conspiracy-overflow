@@ -32,4 +32,4 @@ As a user, I...
 - would like to tag my questions
 - edit/delete content
 
-[schema][/public/schema.png]
+![schema][/public/schema.png?raw=true]
