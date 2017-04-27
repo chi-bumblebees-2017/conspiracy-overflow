@@ -1,0 +1,23 @@
+<h1 class="center">Conspiracy Overflow</h1>
+<h4 class="center italicize">Where Someone's Always Listening...</h4>
+
+<div class="button-container plum-purple-background center">
+  <a href="/questions/new">Ask a Question</a>
+</div>
+
+<div class="list-container">
+  <table class="question-list">
+    <% @questions.each do |question| %>
+      <tr class="question-row">
+        <!--  TODO: CHANGE votes.count TO total_vote_value -->
+        <td class="vote-total text-align-r dark-gray-text"><%= question.votes.count %> votes</td>
+        <td class="answer-total text-align-r dark-gray-text"> <%= question.answers.count %> answers</td>
+        <td class="question-link"><a href='/questions/<%= question.id %>'><%= question.title %></a></td>
+      </tr>
+    <% end %>
+  </table>
+
+</div>
+
+
+
