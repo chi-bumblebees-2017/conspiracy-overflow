@@ -1,6 +1,7 @@
 <div>
   <%= erb :_errors, locals: { errors: @errors } if @errors %>
   <h2><%= @question.title %></h2>
+  <p class="author-name">Asked by: <%= @question.author.username %></p>
   <div class="question-vote-form"><%= erb :_vote_form, locals: { votable: @question } %>
   <p id="question-body"><%= @question.body %></p>
   <%= erb :_comment_list, locals: { commentable: @question } %>
