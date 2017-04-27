@@ -10,9 +10,9 @@ def give_username
     when 2
       add = Faker::Ancient.titan
     when 3
-      add = Faker::Hacker.noun
+      add = Faker::Hacker.noun.capitalize
     when 4
-      add = Faker::Hacker.verb
+      add = Faker::Hacker.verb.capitalize
     end
     username << add
   end
@@ -20,6 +20,7 @@ def give_username
 end
 
 100.times do
+  # TODO: change hashed_password to password
   User.create(username: give_username, email: Faker::Internet.safe_email, hashed_password: 'password')
 end
 
