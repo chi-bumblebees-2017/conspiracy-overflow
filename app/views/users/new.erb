@@ -1,0 +1,15 @@
+<div class="container">
+
+  <h3>Register</h3>
+
+    <%= erb :'_errors' %>
+
+    <form method="post" action="/user">
+      <input type="text" name="username" placeholder="Username">
+      <input type="email" name="email" placeholder="Email">
+      <input type="password" name="password" placeholder="Password">
+
+      <input type="submit" value="Login">
+    </form>
+
+</div>
