@@ -1,0 +1,17 @@
+<div>
+  <h2>Question Something:</h2>
+  <%= erb :'_errors', locals: {errors: @errors} if @errors %>
+  <form method="POST" action="/questions" id="question-form">
+    <div class="formfield">
+      <label name="Title">Title:</label>
+      <input type="text" name="question[title]" />
+    </div>
+    <div class="formfield">
+      <label name="Body">Explain yourself:</label>
+      <textarea name="question[body]"></textarea>
+    </div>
+    <div class="formfield">
+      <input type="submit" name="submit" value="Free your mind" />
+    </div>
+  </form>
+</div>
