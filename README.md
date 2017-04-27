@@ -28,3 +28,8 @@ As a user, I...
 - want to see answers in a logical fashion (best, followed by highest votes)
 - want to see the comments displayed chronologically (oldest first)
 - want to pick how I see questions displayed (trending/highest votes/time)
+- want to have a profile page where I see all the questions I asked, answers I gave, comments I made
+- would like to tag my questions
+- edit/delete content
+
+[schema][/public/schema.png]
