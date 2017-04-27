@@ -21,6 +21,7 @@
   <header>
     <nav class="header-footer">
       <ul>
+        <!--  TODO: CHANGE login logic to use helpers -->
       <% if session[:user_id] %>
         <li><%= User.find(session[:user_id]).username %></li>
         <li>
