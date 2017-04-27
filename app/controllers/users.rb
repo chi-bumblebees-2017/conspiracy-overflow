@@ -7,7 +7,7 @@ post '/users' do
   new_user.password = params[:password]
 
   if new_user.save
-    session[:id] = new_user.id
+    session[:user_id] = new_user.id
     redirect "/questions"
   else
     @errors = new_user.errors.full_messages

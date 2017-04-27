@@ -1,15 +1,10 @@
-<div class="container">
+<h3 class="center">Join the Conspiracy</h3>
 
-  <h3>Join the Conspiracy</h3>
+ <%= erb :'_errors' %>
 
-    <%= erb :'_errors' %>
-
-    <form method="post" action="/users">
-      <input type="text" name="user[username]" placeholder="Username">
-      <input type="email" name="user[email]" placeholder="Email">
-      <input type="password" name="password" placeholder="Password">
-
-      <input type="submit" value="I Believe">
-    </form>
-
-</div>
+ <form method="post" action="/users">
+   <input type="text" name="user[username]" placeholder="Username">
+   <input type="email" name="user[email]" placeholder="Email">
+   <input type="password" name="password" placeholder="Password">
+   <input type="submit" value="I Want to Believe">
+ </form>

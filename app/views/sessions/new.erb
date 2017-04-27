@@ -1,14 +1,12 @@
-<div class="container">
+<h3 class="center">Login</h3>
 
-  <h3>Login</h3>
+<%= erb :'_errors' %>
 
-    <%= erb :'_errors' %>
+<form method="post" action="/sessions">
+  <input type="email" name="email" placeholder="Email">
+  <input type="password" name="password" placeholder="Password">
 
-    <form method="post" action="/sessions">
-      <input type="email" name="email" placeholder="Email">
-      <input type="password" name="password" placeholder="Password">
+  <input type="submit" value="Login">
+</form>
 
-      <input type="submit" value="Login">
-    </form>
 
-</div>

@@ -6,16 +6,15 @@ post '/sessions' do
   user = User.authenticate(params[:email], params[:password])
 
   if user
-    session[:id] = user.id
+    session[:user_id] = user.id
     redirect "/questions"
   else
-    @errors = ["The CIA manipulating your data. Try again"]
-    # @errors = new_user.errors.full_messages
+    @errors = ["The CIA is manipulating your data. Try again"]
     erb :'sessions/new'
   end
 end
 
-delete '/session/:id' do
-  session[:id] = nil
+delete '/sessions' do
+  session[:user_id] = nil
   redirect "/questions"
 end
