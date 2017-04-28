@@ -1,1 +1,12 @@
-_comment_list.erb
+<div class="list-container">
+  <table class="comment-list">
+    <% question.comments.each do |comment| %>
+      <tr class="comment-row">
+         <!--  TODO: CHANGE votes.count TO total_vote_value -->
+        <td class="vote-total"><%= comment.votes.count %></td>
+        <!-- POSSIBLE TODO: Change commenting username to link IF user profile show page -->
+        <td class="comment-body"><%= comment.body %> - <%= comment.commenter.username %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
