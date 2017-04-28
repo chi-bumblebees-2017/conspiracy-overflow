@@ -197,3 +197,18 @@ td {
   font-size: .9em;
 }
 
+.answer-break {
+  display: block;
+  border-bottom: 1px solid #cccccc;
+}
+
+.answer-vote-button {
+
+}
+
+.answer-form {
+  width: 40%;
+  margin: auto;
+}
+
+
