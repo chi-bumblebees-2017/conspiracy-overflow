@@ -9,3 +9,13 @@ post '/questions/:id/answers' do
     erb :"questions/show"
   end
 end
+
+put '/questions/:question_id/answers/:id' do
+  @question = Question.find(params[:question_id])
+  @answer = Answer.find(params[:id])
+
+  @question.clear_favorites
+  @answer.set_favorited
+
+  redirect "/questions/#{@question.id}"
+end

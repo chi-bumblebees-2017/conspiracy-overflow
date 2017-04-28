@@ -1,6 +1,7 @@
 <h2>Answers:</h2>
 
-<% @question.answers.each do |answer| %>
+<% @question.answers.order(:created_at).each do |answer| %>
+
   <div class="answer-break">
     <p><%= answer.body %></p>
     <p class="author-name">Answered by: <%= answer.responder.username %></p>
@@ -8,13 +9,17 @@
     <%= erb :_comment_list, locals: { commentable: answer } %>
   </div>
 
+  <% if answer.favorited %>
+    <%= "Best" %>
+  <% end %>
+
   <% if user_is_author?(@question.author) %>
-    <p>hello</p>
-    # div for ajaxing
-    # clear favorites (@question.clear_favorites)
-    # run set_favorite
-  <% else %>
-    <p>goodbye</p>
+    <div>
+      <form id="favorite-form" action="/questions/<%= @question.id %>/answers/<%= answer.id %>" method="post">
+        <input type="hidden" name="_method" value="put">
+        <input id="best-answer-link-disguise" type="submit" value="Best Answer">
+      </form>
+    </div>
   <% end %>
 
 <% end %>

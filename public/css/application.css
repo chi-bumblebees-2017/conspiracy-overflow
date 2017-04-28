@@ -138,7 +138,23 @@ input {
   font-weight: bold;
 }
 
-#logout-form {
+#best-answer-link-disguise {
+  outline: none;
+  border: none;
+  background: none;
+  padding: 0px;
+  margin: 0px;
+  width: auto;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+}
+
+#best-answer-link-disguise:hover {
+  font-weight: bold;
+}
+
+#logout-form, #favorite-form {
   display: inline;
 }
 
