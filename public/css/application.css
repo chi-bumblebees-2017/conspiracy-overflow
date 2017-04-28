@@ -211,4 +211,11 @@ td {
   margin: auto;
 }
 
+.errors {
+  color: red;
+  text-align: center;
+  list-style-type: none;
+  padding: 0px;
+}
+
 
