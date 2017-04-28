@@ -1,3 +1,4 @@
+# Verify a user is logged in before letting them comment
 before "/comments" do
   check_login
 end
