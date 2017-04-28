@@ -1,1 +1,25 @@
-_comment_list.erb
+<div class="list-container">
+    <table class="comment-list">
+      <% commentable.comments.each do |comment| %>
+        <tr class="comment-row top-border bottom-border">
+           <!--  TODO: CHANGE votes.count TO total_vote_value -->
+          <td class="vote-total text-align-r dark-gray-text top-pad font-size-8em bottom-pad"><%= comment.votes.count %></td>
+          <!-- POSSIBLE TODO: Change commenting username to link IF user profile show page -->
+          <td class="comment-body top-pad bottom-pad"><%= comment.body %></td>
+          <td class="commenter-username top-pad italicize bottom-pad"><%= comment.commenter.username %></td>
+          <td class="date dark-gray-text italicize right-align top-pad bottom-pad"><%= timestamp_to_date(comment) %></td>
+        </tr>
+      <% end %>
+    </table>
+</div>
+
+<% if @errors = @comment_errors %>
+  <%= erb :"_errors" %>
+<% end %>
+  <form class="new-comment-button center block" method="post" action="/comments">
+    <input type="hidden" name="comment[commentable_id]" value=<%= commentable.id %>>
+    <input type="hidden" name="comment[commentable_type]" value=<%= commentable.class %>>
+    <input type="hidden" name="question[question_id]" value=<%= @question.id %>>
+    <input class="inline margin-auto max-width-50" type="text" name="comment[body]" placeholder="Comment">
+    <input class="inline  max-width-125 margin-auto" type="submit" value="Add comment">
+  </form>

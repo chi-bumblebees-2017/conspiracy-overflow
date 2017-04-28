@@ -1,7 +1,7 @@
 <% if @errors %>
-  <ul>
+  <ul class="error-msg-list block center">
     <% @errors.each do |error| %>
-      <li><%= error %></li>
+      <li class="error-msg inline-block">Error: <%= error.downcase %></li>
     <% end %>
   </ul>
 <% end %>
