@@ -12,10 +12,7 @@
       <% end %>
     </table>
 </div>
-
-<% if @comment_errors = @errors %>
   <%= erb :"_errors" %>
-<% end %>
   <form class="new-comment-button center block" method="post" action="/comments">
     <input type="hidden" name="comment[commentable_id]" value=<%= commentable.id %>>
     <input type="hidden" name="comment[commentable_type]" value=<%= commentable.class %>>

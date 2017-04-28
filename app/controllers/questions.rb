@@ -4,15 +4,14 @@ get '/questions' do
 end
 
 get '/questions/new' do
-  # TODO: check_login
+  check_login
   erb :'questions/new'
 end
 
 post '/questions' do
-  # TODO: check_login
+  check_login
   question = Question.new(params[:question])
-  # TODO: question.author = current_user
-  question.author = User.first
+  question.author = current_user
   if question.save
     redirect "/questions/#{question.id}"
   else
