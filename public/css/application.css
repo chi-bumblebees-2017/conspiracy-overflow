@@ -215,6 +215,7 @@ td {
 
 .answer-break {
   display: block;
+  width: 800px;
   border-bottom: 1px solid #cccccc;
 }
 
@@ -234,4 +235,15 @@ td {
   padding: 0px;
 }
 
+.best-indicator {
+  height: auto;
+  width: auto;
+  max-width: 50px;
+  max-height: 50px;
+}
 
+.author-name {
+  color: #6c7981;
+  font-size: .8em;
+  font-style: italic;
+}

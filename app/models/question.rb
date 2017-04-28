@@ -12,5 +12,4 @@ class Question < ActiveRecord::Base
       answer.save
     end
   end
-
 end

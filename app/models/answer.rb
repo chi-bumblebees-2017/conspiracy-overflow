@@ -9,5 +9,4 @@ class Answer < ActiveRecord::Base
     self.favorited = true
     self.save
   end
-
 end
