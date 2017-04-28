@@ -201,6 +201,10 @@ input {
   padding-top: 10px;
 }
 
+.bottom-pad {
+  padding-bottom: 10px;
+}
+
 .right-align {
   text-align: right;
 }
@@ -209,7 +213,7 @@ td {
   padding-left: 10px;
 }
 
-.font-size-8em {
+.font-size-9em {
   font-size: .9em;
 }
 
@@ -246,4 +250,33 @@ td {
   color: #6c7981;
   font-size: .8em;
   font-style: italic;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+.max-width-125 {
+  max-width: 125px;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.new-comment-button {
+ max-width: 500px;
+ margin: auto;
+}
+
+.max-width-50 {
+  max-width: 50%;
 }
