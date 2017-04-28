@@ -9,8 +9,7 @@
   <table class="question-list">
     <% @questions.each do |question| %>
       <tr class="question-row top-border">
-        <!--  TODO: CHANGE votes.count TO total_vote_value -->
-        <td class="vote-total text-align-r dark-gray-text top-pad font-size-8em"><%= question.votes.count %> votes</td>
+        <td class="vote-total text-align-r dark-gray-text top-pad font-size-8em"><%= question.total_vote_value %> votes</td>
         <td class="answer-total text-align-r dark-gray-text top-pad font-size-8em"> <%= question.answers.count %> answers</td>
         <td class="question-link top-pad"><a href='/questions/<%= question.id %>'><%= question.title %></a></td>
       </tr>
