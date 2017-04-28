@@ -11,7 +11,7 @@ post '/comments' do
   if @comment.save
     redirect "/questions/#{@question.id}"
   else
-    @comment_errors = @comment.errors.full_messages
+    @errors = @comment.errors.full_messages
     erb :"questions/show"
 end
 
