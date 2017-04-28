@@ -23,6 +23,7 @@ require 'erb'
 require 'bcrypt'
 
 require 'faker' if development?
+require 'pry' if development?
 
 
 # Some helper constants for path-centric logic
