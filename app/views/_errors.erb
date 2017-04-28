@@ -1,7 +1,8 @@
 <% if @errors %>
-  <ul>
+  <p class="errors">Something Went Wrong:</p>
+  <ul class="errors">
     <% @errors.each do |error| %>
-      <li><%= error %></li>
+      <li class="errors"><%= error %></li>
     <% end %>
   </ul>
 <% end %>

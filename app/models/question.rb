@@ -8,6 +8,9 @@ class Question < ActiveRecord::Base
   validates_presence_of :title, :body, :author
 
   def clear_favorites
-    answers.each { |answer| answer.favorited = false }
+    answers.each do |answer|
+      answer.favorited = false
+      answer.save
+    end
   end
 end
