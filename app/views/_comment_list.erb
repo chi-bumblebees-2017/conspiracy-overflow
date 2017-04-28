@@ -13,7 +13,7 @@
     </table>
 </div>
 
-<% if @errors = @comment_errors %>
+<% if @comment_errors = @errors %>
   <%= erb :"_errors" %>
 <% end %>
   <form class="new-comment-button center block" method="post" action="/comments">
