@@ -1,7 +1,6 @@
 <form class="vote-form upvote" action="/votes" method="post">
   <input type="hidden" name="vote[votable_id]" value="<%= votable.id %>">
   <input type="hidden" name="vote[votable_type]" value="<%= votable.class %>">
-  <!-- TODO: create -->
   <input type="hidden" name="question_id" value="<%= @question.id %>">
   <% if votable.vote_match("up", current_user) %>
     <fieldset disabled>
