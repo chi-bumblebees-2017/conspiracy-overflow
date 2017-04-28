@@ -14,7 +14,7 @@
     <%= votable.total_vote_value %>
   </div>
    <% if votable.vote_match("down", current_user) %>
-    </fieldset disabled>
+    <fieldset disabled>
   <% end %>
   <input class="downvote vote-button" type="submit" name="submit" value="Downvote">
   <% if votable.vote_match("down", current_user) %>
