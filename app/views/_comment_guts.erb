@@ -1,8 +1,7 @@
 <tr class="comment-row top-border bottom-border">
   <td class="vote-column comment-vote-form text-align-r dark-gray-text top-pad font-size-8em bottom-pad"><%= erb :_vote_form, locals: { votable: comment } %></td>
-  <!-- STRETCH TODO: Change commenting username to link IF user profile show page -->
   <td class="comment-body top-pad bottom-pad"><%= comment.body %></td>
-  <td class="commenter-username top-pad italicize bottom-pad"><%= comment.commenter.username %></td>
+  <td class="commenter-username top-pad italicize bottom-pad"><a class="username-link" href="/users/<%= comment.commenter.id %>"><%= comment.commenter.username %></a></td>
   <td class="date dark-gray-text italicize right-align top-pad bottom-pad"><%= timestamp_to_date(comment) %></td>
 </tr>
 

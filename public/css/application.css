@@ -32,6 +32,7 @@ h4.brand {
 
 .container {
   margin: 170px auto 50px auto;
+  margin-top: 150px;
   width: 1000px;
   padding: 0px 20px 20px 20px;
   border: 1px solid black;
@@ -67,16 +68,27 @@ a {
   color: black;
 }
 
-a:visited {
-  color: #6c7981;
-}
-
 a:hover {
   font-weight: bold;
-  color: #000;
+  color: #40466f;
 }
 
+.display-comment-form {
+   color: #534a60;
+}
+.display-comment-form:hover {
+  font-weight: bold;
+  color: #40466f;
+}
 
+.username_link {
+  color: #534a60;
+}
+
+.username_link:hover {
+  font-weight: bold;
+  color: #40466f;
+}
 
 header {
   position: fixed;
@@ -166,18 +178,13 @@ input, .new-question-body, .answer-form textarea {
   margin: 0px;
   width: auto;
   text-decoration: none;
-  color: #333;
+  color: black;
   display: inline-block;
 }
 
 #link-disguise:hover {
   font-weight: bold;
-  color: #000;
-}
-
-#link-disguise:visited {
-  font-weight: bold;
-  color: #6c7981;
+  color: #40466f;
 }
 
 #best-answer-link-disguise {
@@ -241,20 +248,20 @@ input, .new-question-body, .answer-form textarea {
   padding-left: 5px;
 }
 
-.comment-row .date, .vote-column {
+.comment-row .date, .vote-column, .commenter-username {
   width: 20%;
 }
 
-.comment-row .comment-body {
-  widh
+.comment-row {
+  font-size: 0.9em;
 }
 
 .top-pad {
-  padding-top: 10px;
+  padding-top: 2.5px;
 }
 
 .bottom-pad {
-  padding-bottom: 10px;
+  padding-bottom: 2.5px;
 }
 
 .right-align {
@@ -270,10 +277,11 @@ td {
   font-size: .9em;
 }
 
+
 .answer-break {
   display: block;
   width: 800px;
-  border-bottom: 1px solid #cccccc;
+  /*border-bottom: 1px solid #cccccc;*/
 }
 
 .answer-form {
@@ -331,8 +339,21 @@ td {
 }
 
 .new-comment-form {
- max-width: 500px;
+ min-width: 600px;
  margin: auto;
+ text-align: right;
+ float: left;
+}
+
+.revealed-textarea {
+  max-width: 400px;
+}
+
+.clear-right {
+  clear: right;
+}
+.comments-container {
+  margin-left: 80px;
 }
 
 .max-width-50 {
