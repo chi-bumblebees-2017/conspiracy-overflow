@@ -1,1 +1,53 @@
-user show.erb
+<h2 class="username"><%= current_user.username %></h2>
+<h3 class="question-list-header">Questions I've asked</h3>
+<div class="list-container">
+  <table class="question-list profile">
+    <% @asked_questions.each do |question| %>
+      <tr class="question-row top-border">
+        <td class="vote-total text-align-r dark-gray-text top-pad font-size-8em"><%= question.total_vote_value %> votes</td>
+        <td class="answer-total text-align-r dark-gray-text top-pad font-size-8em"> <%= question.answers.count %> answers</td>
+        <td class="question-link top-pad"><a href='/questions/<%= question.id %>'><%= question.title %></a></td>
+      </tr>
+      <tr class="bottom-border"> <td colspan="3" class="date dark-gray-text italicize right-align"><%= timestamp_to_date(question) %></td></tr>
+    <% end %>
+  </table>
+</div>
+<h3 class="question-list-header">Questions I've answered</h3>
+<div class="list-container">
+  <table class="question-list profile">
+    <% @answered_questions.each do |question| %>
+      <tr class="question-row top-border">
+        <td class="vote-total text-align-r dark-gray-text top-pad font-size-8em"><%= question.total_vote_value %> votes</td>
+        <td class="answer-total text-align-r dark-gray-text top-pad font-size-8em"> <%= question.answers.count %> answers</td>
+        <td class="question-link top-pad"><a href='/questions/<%= question.id %>'><%= question.title %></a></td>
+      </tr>
+      <tr class="bottom-border"> <td colspan="3" class="date dark-gray-text italicize right-align"><%= timestamp_to_date(question) %></td></tr>
+    <% end %>
+  </table>
+</div>
+<h3 class="question-list-header">Questions I've commented on</h3>
+<div class="list-container">
+  <table class="question-list profile">
+    <% @commented_questions.each do |question| %>
+      <tr class="question-row top-border">
+        <td class="vote-total text-align-r dark-gray-text top-pad font-size-8em"><%= question.total_vote_value %> votes</td>
+        <td class="answer-total text-align-r dark-gray-text top-pad font-size-8em"> <%= question.answers.count %> answers</td>
+        <td class="question-link top-pad"><a href='/questions/<%= question.id %>'><%= question.title %></a></td>
+      </tr>
+      <tr class="bottom-border"> <td colspan="3" class="date dark-gray-text italicize right-align"><%= timestamp_to_date(question) %></td></tr>
+    <% end %>
+  </table>
+</div>
+<h3 class="question-list-header">Questions I've voted on</h3>
+<div class="list-container">
+  <table class="question-list profile">
+    <% @voted_questions.each do |question| %>
+      <tr class="question-row top-border">
+        <td class="vote-total text-align-r dark-gray-text top-pad font-size-8em"><%= question.total_vote_value %> votes</td>
+        <td class="answer-total text-align-r dark-gray-text top-pad font-size-8em"> <%= question.answers.count %> answers</td>
+        <td class="question-link top-pad"><a href='/questions/<%= question.id %>'><%= question.title %></a></td>
+      </tr>
+      <tr class="bottom-border"> <td colspan="3" class="date dark-gray-text italicize right-align"><%= timestamp_to_date(question) %></td></tr>
+    <% end %>
+  </table>
+</div>

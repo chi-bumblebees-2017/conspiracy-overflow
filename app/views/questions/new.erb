@@ -1,18 +1,9 @@
 <div>
-  <h2>Question Something:</h2>
+  <h2 class="new-question-header">Question Something:</h2>
   <%= erb :'_errors', locals: {errors: @errors} if @errors %>
-  <form method="POST" action="/questions" id="question-form">
-    <div class="formfield">
-      <label name="Title">Title:</label>
-      <input type="text" name="question[title]" />
-    </div>
-    <div class="formfield">
-      <!-- TODO: CSS - make this not ugly -->
-      <label name="Body">Explain yourself:</label>
-      <textarea name="question[body]"></textarea>
-    </div>
-    <div class="formfield">
-      <input type="submit" name="submit" value="Free your mind" />
-    </div>
+  <form class="new-question" method="POST" action="/questions" id="question-form">
+    <input type="text" name="question[title]" placeholder="Title" />
+    <textarea class="new-question-body" name="question[body]" placeholder="Explain yourself..."></textarea>
+    <input type="submit" name="submit" value="Free your mind" />
   </form>
 </div>

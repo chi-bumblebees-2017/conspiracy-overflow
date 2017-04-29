@@ -7,7 +7,7 @@ post '/sessions' do
 
   if user
     session[:user_id] = user.id
-    redirect "/questions"
+    redirect "/users/#{user.id}"
   else
     @errors = ["The CIA is manipulating your data. Try again"]
     erb :'sessions/new'
