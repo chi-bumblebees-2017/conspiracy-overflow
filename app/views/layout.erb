@@ -14,6 +14,7 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  <script src="/js/vote.js"></script>
 
   <title>Conspiracy Overflow</title>
 </head>
@@ -22,7 +23,7 @@
     <nav class="header-footer">
       <ul>
       <% if logged_in? %>
-        <li><%= current_user.username %></li>
+        <li><a href="/users/<%= current_user.id %>"><%= current_user.username %></a></li>
         <li>
           <form id="logout-form" action="/sessions" method="post">
             <input type="hidden" name="_method" value="delete">
@@ -36,6 +37,8 @@
         <li><a href="/">home</a></li>
       </ul>
     </nav>
+    <h1 class="center brand">Conspiracy Overflow</h1>
+    <h4 class="center italicize brand">Where Someone's Always Listening...</h4>
   </header>
   <div class="container">
     <%= yield %>

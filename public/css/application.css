@@ -5,8 +5,33 @@
     indigo:       #40466f
 */
 
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro|Permanent+Marker');
+
+.brand {
+  font-family: 'Permanent Marker', cursive;
+  line-height: 1.1em;
+  color: #222;
+}
+
+h1.brand {
+  font-size: 3em;
+  letter-spacing: 2px;
+  margin: 0 auto;
+}
+
+h4.brand {
+  margin: 5px auto;
+  font-size: 1.5em;
+}
+
+* {
+  font-family: 'Anonymous Pro', monospace;
+  line-height: 1.5em;
+  color: #444;
+}
+
 .container {
-  margin: 50px auto;
+  margin: 170px auto 50px auto;
   width: 1000px;
   padding: 0px 20px 20px 20px;
   border: 1px solid black;
@@ -42,19 +67,24 @@ a {
   color: black;
 }
 
-a:hover {
-  font-weight: bold;
+a:visited {
+  color: #6c7981;
 }
 
-a:visited {
-  color: black;
+a:hover {
+  font-weight: bold;
+  color: #000;
 }
+
+
 
 header {
   position: fixed;
   top: 0;
   width: 100%;
   border-bottom: 1px solid black;
+  min-height: 150px;
+  background-color: #9fb8b5;
 }
 
 footer {
@@ -98,13 +128,17 @@ input[type=hidden] {
   padding-left: 15px;
 }
 
-input {
+input, .new-question-body {
   border: 1px solid #534a60;
   border-radius: 5px;
   background: white;
-  padding: 2px;
+  padding: 5px;
   margin: 5px;
   width: 80%;
+}
+
+.new-question-body {
+  height: 100px;
 }
 
 .top-border {
@@ -132,12 +166,18 @@ input {
   margin: 0px;
   width: auto;
   text-decoration: none;
-  color: black;
+  color: #333;
   display: inline-block;
 }
 
 #link-disguise:hover {
   font-weight: bold;
+  color: #000;
+}
+
+#link-disguise:visited {
+  font-weight: bold;
+  color: #6c7981;
 }
 
 #best-answer-link-disguise {
@@ -154,6 +194,7 @@ input {
 
 #best-answer-link-disguise:hover {
   font-weight: bold;
+  color: #000;
 }
 
 #logout-form, #favorite-form {
@@ -181,13 +222,14 @@ input {
   border-radius: 10px;
   width: 20%;
   height: auto;
-  margin: auto;
+  margin: 10px auto;
 }
 
 .button-container a {
   display: block;
   padding: 10px;
   color: white;
+  font-size: 1.3em;
 }
 
 .italicize {
@@ -379,7 +421,7 @@ fieldset {
   border-bottom: 12px solid #6c7981;
 }
 
-.answer-vote-form .downvoted input[type=submit].downvote {
+.answer-vote-form .downvoted input[type=submit].downvote{
   border-top: 12px solid #6c7981;
 }
 
@@ -403,4 +445,38 @@ fieldset {
 
 .answer-vote-form .total-value {
   font-size: 1.6em;
+}
+
+.disabled-vote {
+  border-color: green;
+}
+
+h2.username, .new-question-header, .new-user-header, .login-header {
+  font-size: 2em;
+  font-family: 'Permanent Marker', cursive;
+  line-height: 1.1em;
+  color: #222;
+  letter-spacing: 2px;
+  border-bottom: 1px dashed #888;
+  padding-bottom: 5px;
+  margin: 20px 15px 0 15px;
+}
+
+.question-list-header {
+  margin: 10px 20px;
+  font-size: 1.4em;
+}
+
+.question-list.profile {
+  margin-left: 5%;
+  width: 95%;
+  border-left: 5px solid #888;
+}
+
+.question-list.profile .question-link {
+  width: 90%;
+}
+
+.question-list.profile .bottom-border {
+  width: 100%;
 }
