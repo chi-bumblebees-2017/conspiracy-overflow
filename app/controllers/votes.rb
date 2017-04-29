@@ -9,5 +9,10 @@ post "/votes" do
   else
     votable.downvote_from(current_user)
   end
-  redirect "/questions/#{params[:question_id]}"
+
+  if request.xhr?
+  	votable.total_vote_value.to_s
+  else
+  	redirect "/questions/#{params[:question_id]}"
+  end
 end
