@@ -1,18 +1,31 @@
 post "/votes" do
-  check_login
+  # check_login
 
   # Circle back on this logic:
   votable = Vote.new(params[:vote]).votable
 
-  if params[:submit] == "Upvote"
-    votable.upvote_from(current_user)
-  else
-    votable.downvote_from(current_user)
-  end
+  if logged_in?
+    if params[:submit] == "Upvote"
+      success = votable.upvote_from(current_user)
+    else
+      success = votable.downvote_from(current_user)
+    end
 
-  if request.xhr?
-  	votable.total_vote_value.to_s
+    if request.xhr?
+      # logged in, ajax
+    	votable.total_vote_value.to_s
+    else
+      # logged in, no ajax
+    	redirect "/questions/#{params[:question_id]}"
+    end
   else
-  	redirect "/questions/#{params[:question_id]}"
+    if request.xhr?
+      # not logged in, ajax
+      status 401
+    else
+      # not logged in, no ajax
+      status 401
+      redirect "/sessions/new"
+    end
   end
 end

@@ -12,13 +12,13 @@ $(document).ready(function() {
 		$("#just-clicked").removeAttr("id");
 		$(this).attr("id", "just-clicked");
 	});
-	//FORM SUBMISSION HANDLING: 
+	//FORM SUBMISSION HANDLING:
 	$(".container").on("submit", ".vote-form", function(event) {
 		event.preventDefault();
-		
+
 		var vote = $(this).serialize();
 		var submitValue = $("#just-clicked").val();
-		
+
 		var $voteForm = $(this);
 
 		$.ajax({
@@ -28,11 +28,15 @@ $(document).ready(function() {
 		})
 		.done(function(data){
 			$voteForm.find(".total-value").text(data);
-			
+
 			cleanClickForm($voteForm)
 			toggleClickButton($voteForm.find("#just-clicked"));
+		})
+		.fail(function(request, status, error) {
+			alert("Error: You must be logged in to vote, sheep.")
+      window.location.href = "/sessions/new"
 		});
-	}); 
+	});
 });
 
 function toggleClickButton($justClicked){
