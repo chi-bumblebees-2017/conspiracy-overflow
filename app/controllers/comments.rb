@@ -1,10 +1,5 @@
 # Verify a user is logged in before letting them comment
-before "/comments" do
-  check_login
-end
-
 post '/comments' do
-  check_login
   @comment = Comment.new(body: params[:body], commentable_id: params[:commentable_id], commentable_type: params[:commentable_type])
   @comment.commenter_id = current_user.id
   @question = Question.find(params[:question_id])

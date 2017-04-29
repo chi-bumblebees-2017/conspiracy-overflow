@@ -1,13 +1,10 @@
 <div class="comments-container">
-
   <table class="comments-table">
     <% commentable.comments.each do |comment| %>
     <%  %>
       <%= erb :_comment_guts, locals: { comment: comment } %>
     <% end %>
   </table>
-
-
   <%= erb :_errors %>
   <form class="new-comment-form center block" method="post" action="/comments">
     <input class="commentable-id"type="hidden" name="commentable_id" value=<%= commentable.id %>>

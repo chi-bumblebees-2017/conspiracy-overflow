@@ -28,8 +28,9 @@ $(document).ready(function() {
 
 /////////////// NEW COMMENT AJAX START//////////////////
 
-  $(".new-comment-form").on("submit", function( event ) {
+  $(".question-show-container").on("submit", ".new-comment-form", function( event ) {
     event.preventDefault();
+
     var action = $(this).attr("action");
     var method = $(this).attr("method");
     var data = $(this).serialize();
@@ -47,7 +48,7 @@ $(document).ready(function() {
     .fail(function(request, status, error) {
       if (request.status === 422) {
         alert("Error: comment text can't be blank");
-      } elsif (request.status === 401) {
+      } else {
         alert("You must be logged in to comment");
         window.location.href = "/sessions/new"
       };
