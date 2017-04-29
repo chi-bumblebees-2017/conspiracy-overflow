@@ -24,16 +24,13 @@ post '/questions/:id/answers' do
 end
 
 put '/questions/:question_id/answers/:id' do
-  # check_login
   @question = Question.find(params[:question_id])
   @answer = Answer.find(params[:id])
 
   if user_is_author?(@question.author)
     @question.clear_favorites
     @answer.set_favorited
-    if request.xhr?
-      "#XHR"
-    else
+    if !request.xhr?
       redirect "/questions/#{@question.id}"
     end
   else
