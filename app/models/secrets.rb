@@ -4,7 +4,7 @@ module Secrets
   end
 
   def no_illuminati
-    if title
+    if defined? title
       if title.match(/illuminati/i)
         errors.add(:title, "is an unacceptable topic in our New World Order.")
       end

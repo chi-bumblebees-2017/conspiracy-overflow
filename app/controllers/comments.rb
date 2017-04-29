@@ -14,8 +14,10 @@ post '/comments' do
   else
     if request.xhr? && logged_in?
       status 422
+      @comment.errors.full_messages
     elsif request.xhr?
       status 401
+      @comment.errors.full_messages
     else
       @errors = @comment.errors.full_messages
       erb :"questions/show"

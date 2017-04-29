@@ -128,7 +128,7 @@ input[type=hidden] {
   padding-left: 15px;
 }
 
-input, .new-question-body {
+input, .new-question-body, .answer-form textarea {
   border: 1px solid #534a60;
   border-radius: 5px;
   background: white;
@@ -279,6 +279,11 @@ td {
 .answer-form {
   width: 40%;
   margin: auto;
+}
+
+.answer-form textarea {
+  width: 90%;
+  height: 100px;
 }
 
 .errors {
