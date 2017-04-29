@@ -8,10 +8,11 @@
           <% end %>
         </td>
         <td>
+          <div class="answer-vote-form"><%= erb :_vote_form, locals: { votable: answer } %></div>
           <div class="answer-break">
             <p><%= answer.body %></p>
             <p class="author-name">Answered by: <%= answer.responder.username %></p>
-            <div class="answer-vote-button"><%= erb :_vote_form, locals: { votable: answer } %></div>
+
             <%= erb :_comment_list, locals: { commentable: answer } %>
           </div>
         </td>
