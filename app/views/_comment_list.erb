@@ -9,7 +9,6 @@
   </form>
   <table class="comments-table">
     <% commentable.comments.each do |comment| %>
-    <%  %>
       <%= erb :_comment_guts, locals: { comment: comment } %>
     <% end %>
   </table>

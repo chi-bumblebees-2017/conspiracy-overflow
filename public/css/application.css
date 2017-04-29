@@ -68,10 +68,6 @@ a {
   color: black;
 }
 
-a:visited {
-  color: #6c7981;
-}
-
 a:hover {
   font-weight: bold;
   color: #40466f;
@@ -182,18 +178,13 @@ input, .new-question-body {
   margin: 0px;
   width: auto;
   text-decoration: none;
-  color: #534a60;
+  color: black;
   display: inline-block;
 }
 
 #link-disguise:hover {
   font-weight: bold;
   color: #40466f;
-}
-
-#link-disguise:visited {
-  font-weight: bold;
-  color: #6c7981;
 }
 
 #best-answer-link-disguise {
@@ -357,9 +348,7 @@ td {
   clear: right;
 }
 .comments-container {
-  margin: auto;
-  position: relative;
-  left: 50px;
+  margin-left: 80px;
 }
 
 .max-width-50 {
