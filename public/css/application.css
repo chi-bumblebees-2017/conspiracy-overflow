@@ -85,10 +85,6 @@ input[type=hidden] {
   border: 0;
 }
 
-.list-container {
-  margin: 20px;
-}
-
 .question-list {
   margin: auto;
 }
@@ -274,7 +270,7 @@ td {
   margin: auto;
 }
 
-.new-comment-button {
+.new-comment-form {
  max-width: 500px;
  margin: auto;
 }
@@ -287,9 +283,6 @@ td {
   display: none;
 }
 
-.box {
-  max-width:
-}
 /* begin vote form styling */
 
 .question-vote-form, .answer-vote-form, .comment-vote-form {

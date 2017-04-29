@@ -12,7 +12,7 @@ post '/questions/:id/answers' do
   else
     if request.xhr?
       @errors = @answer.errors.full_messages
-      erb :'_errors', layout: false
+      erb :_errors, layout: false
     else
       @errors = @answer.errors.full_messages
       erb :"questions/show"
