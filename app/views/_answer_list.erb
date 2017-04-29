@@ -30,6 +30,11 @@
     <% end %>
   </table>
 
+<div id="answer-guts">
+  <%= erb :_answer_guts, layout: false %>
+</div>
+
+
 <h3 class="center">Add Answer</h3>
 <%= erb :_errors %>
 <form class="answer-form" method="post" action="/questions/<%= @question.id %>/answers">
