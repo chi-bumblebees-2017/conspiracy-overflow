@@ -32,6 +32,7 @@ h4.brand {
 
 .container {
   margin: 170px auto 50px auto;
+  margin-top: 150px;
   width: 1000px;
   padding: 0px 20px 20px 20px;
   border: 1px solid black;
