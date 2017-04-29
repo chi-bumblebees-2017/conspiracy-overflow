@@ -13,15 +13,9 @@ $(document).ready(function() {
       data: data,
     })
     .done(function(response) {
-      console.log(response);
-    })
-    // .fail(function() {
-    //   console.log("error");
-    // })
-    // .always(function() {
-    //   console.log("complete");
-    // });
-
+      $('#answer-guts').append(response);
+      $('.answer-form').trigger('reset');
+    });
   });
 ////////////ENDS NEW ANSWER AJAX////////////
 });
