@@ -160,7 +160,7 @@ input {
   font-weight: bold;
 }
 
-#logout-form, #favorite-form {
+#logout-form, .favorite-form {
   display: inline;
 }
 
@@ -413,3 +413,6 @@ fieldset {
   border-color: green;
 }
 
+.alien-image {
+  vertical-align: top;
+}
