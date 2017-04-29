@@ -1,4 +1,12 @@
 <div class="comments-container">
+  <a class="display-comment-form top-pad" href="">Add comment</a>
+  <form class="new-comment-form center block hidden" method="post" action="/comments">
+    <input class="commentable-id"type="hidden" name="commentable_id" value=<%= commentable.id %>>
+    <input class="commentable-type" type="hidden" name="commentable_type" value=<%= commentable.class %>>
+    <input class="question-id" type="hidden" name="question_id" value=<%= @question.id %>>
+    <input class="comment-body inline" type="textarea" name="body">
+    <input class="comment-submit-button inline max-width-125 clear-right" type="submit" value="Submit">
+  </form>
   <table class="comments-table">
     <% commentable.comments.each do |comment| %>
     <%  %>
@@ -6,11 +14,4 @@
     <% end %>
   </table>
   <%= erb :_errors %>
-  <form class="new-comment-form center block" method="post" action="/comments">
-    <input class="commentable-id"type="hidden" name="commentable_id" value=<%= commentable.id %>>
-    <input class="commentable-type" type="hidden" name="commentable_type" value=<%= commentable.class %>>
-    <input class="question-id" type="hidden" name="question_id" value=<%= @question.id %>>
-    <input class="comment-body"rows="5" cols="50"  type="textarea" name="body" placeholder="Comment">
-    <input class="comment-submit-button inline  max-width-125 margin-auto" type="submit" value="Add comment">
-  </form>
 </div>

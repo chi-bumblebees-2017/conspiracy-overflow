@@ -36,6 +36,11 @@ $(document).ready(function() {
     var data = $(this).serialize();
     var that = $(this)
 
+    $(this).addClass('hidden');
+    $(this).find(".comment-body").removeClass('revealed-textarea');
+    $(this).prev().removeClass('hidden');
+
+
     $.ajax({
       method: method,
       url: action,
@@ -55,6 +60,19 @@ $(document).ready(function() {
     });
   });
 ///////////////// END COMMENT AJAX ///////////////////////////////
+
+//////////////////// START DYNAMIC COMMENT LINK DISPLAY AJAX ///////////////////////
+
+  $(".display-comment-form").on("click", function( event ) {
+    event.preventDefault();
+    $(this).addClass('hidden');
+    var form = $(this).next();
+    form.removeClass('hidden');
+    form.find(".comment-body").addClass('revealed-textarea');
+
+  });
+
+////////////////// END DYNAMIC COMMENT LINK DISPLAY AJAX ///////////////////////////////////
 
 ////////////AJAX FOR BEST ANSWER////////////
   $('#answer-guts').on('submit', '.favorite-form', function(event) {
