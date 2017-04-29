@@ -1,6 +1,10 @@
 <h2>Answers:</h2>
-<div id="answer-guts">
-  <%= erb :_answer_guts, layout: false %>
+<div>
+  <table id="answer-guts">
+  <% @question.answers.order(:created_at).each do |answer| %>
+  <%= erb :_answer_guts, locals: { answer: answer }, layout: false %>
+    <% end %>
+</table>
 </div>
 <h3 class="center">Add Answer</h3>
 <%= erb :_errors %>
