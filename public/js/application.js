@@ -36,6 +36,14 @@ $(document).ready(function() {
     .done(function( response ) {
       $(that).closest(".comments-container").find(".comments-table").append(response);
       $(".new-comment-form").trigger('reset');
+    })
+    .fail(function(request, status, error) {
+      if (request.status === 422) {
+        alert("Error: comment text can't be blank");
+      } elsif (request.status === 401) {
+        alert("You must be logged in to comment");
+        window.location.href = "/sessions/new"
+      };
     });
   });
 ///////////////// END COMMENT AJAX ///////////////////////////////

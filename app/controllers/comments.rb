@@ -18,10 +18,9 @@ post '/comments' do
       end
   else
     if request.xhr? && logged_in?
-      @errors = @comment.errors.full_messages
-      erb :_errors, layout: false
-    # elsif request.xhr? && !logged_in?
-    #   redirect '/sessions/new'
+      status 422
+    elsif request.xhr?
+      status 401
     else
       @errors = @comment.errors.full_messages
       erb :"questions/show"

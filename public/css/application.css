@@ -241,6 +241,14 @@ input, .new-question-body {
   padding-left: 5px;
 }
 
+.comment-row .date, .vote-column {
+  width: 20%;
+}
+
+.comment-row .comment-body {
+  widh
+}
+
 .top-pad {
   padding-top: 10px;
 }
@@ -254,7 +262,8 @@ input, .new-question-body {
 }
 
 td {
-  padding-left: 10px;
+  padding: 10px;
+
 }
 
 .font-size-9em {
@@ -310,6 +319,10 @@ td {
 
 .margin-auto {
   margin: auto;
+}
+
+.comments-table {
+  width: 85%;
 }
 
 .new-comment-form {
