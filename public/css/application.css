@@ -283,6 +283,10 @@ td {
   max-width: 50%;
 }
 
+.hidden {
+  display: none;
+}
+
 /* begin vote form styling */
 
 .question-vote-form, .answer-vote-form, .comment-vote-form {

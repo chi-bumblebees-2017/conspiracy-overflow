@@ -16,6 +16,6 @@
     <input type="hidden" name="comment[commentable_id]" value=<%= commentable.id %>>
     <input type="hidden" name="comment[commentable_type]" value=<%= commentable.class %>>
     <input type="hidden" name="question[question_id]" value=<%= @question.id %>>
-    <input class="inline margin-auto max-width-50" type="text" name="comment[body]" placeholder="Comment">
+    <input class="box"rows="5" cols="50"  type="textarea" name="comment[body]" placeholder="Comment">
     <input class="inline  max-width-125 margin-auto" type="submit" value="Add comment">
   </form>
