@@ -197,7 +197,7 @@ input, .new-question-body {
   color: #000;
 }
 
-#logout-form, #favorite-form {
+#logout-form, .favorite-form {
   display: inline;
 }
 
@@ -462,6 +462,10 @@ fieldset {
 
 .disabled-vote {
   border-color: green;
+}
+
+.alien-image {
+  vertical-align: top;
 }
 
 h2.username, .new-question-header, .new-user-header, .login-header {
