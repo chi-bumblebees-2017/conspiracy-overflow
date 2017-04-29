@@ -21,9 +21,8 @@
   <header>
     <nav class="header-footer">
       <ul>
-        <!--  TODO: CHANGE login logic to use helpers -->
-      <% if session[:user_id] %>
-        <li><%= User.find(session[:user_id]).username %></li>
+      <% if logged_in? %>
+        <li><%= current_user.username %></li>
         <li>
           <form id="logout-form" action="/sessions" method="post">
             <input type="hidden" name="_method" value="delete">

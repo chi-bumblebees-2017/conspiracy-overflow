@@ -79,6 +79,12 @@ input[type=submit] {
   width: 30%;
 }
 
+input[type=hidden] {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
 .list-container {
   margin: 20px;
 }
@@ -223,10 +229,6 @@ td {
   border-bottom: 1px solid #cccccc;
 }
 
-.answer-vote-button {
-
-}
-
 .answer-form {
   width: 40%;
   margin: auto;
@@ -287,4 +289,125 @@ td {
 
 .box {
   max-width:
+}
+/* begin vote form styling */
+
+.question-vote-form, .answer-vote-form, .comment-vote-form {
+  float: left;
+}
+.comment-list {
+  clear: left;
+}
+
+/* begin vote button styling */
+
+input[type=submit].vote-button {
+  width: 0;
+  height: 0;
+  border-radius: 0;
+  background: none;
+  color: #534a60;
+  padding: 0;
+}
+
+input[type=submit].downvote {
+  border-bottom: 0;
+}
+
+input[type=submit].upvote {
+  border-top: 0;
+}
+
+/*variable vote sizes for question, comment, and answer votes: */
+.question-vote-form input[type=submit].vote-button {
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+}
+
+.question-vote-form input[type=submit].upvote {
+  border-bottom: 20px solid #534a60;
+}
+
+.question-vote-form input[type=submit].downvote {
+  border-top: 20px solid #534a60;
+}
+
+.comment-vote-form input[type=submit].vote-button {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+
+.comment-vote-form input[type=submit].upvote {
+  border-bottom: 8px solid #534a60;
+}
+
+.comment-vote-form input[type=submit].downvote {
+  border-top: 8px solid #534a60;
+}
+
+.answer-vote-form input[type=submit].vote-button {
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+}
+
+.answer-vote-form input[type=submit].upvote {
+  border-bottom: 12px solid #534a60;
+}
+
+.answer-vote-form input[type=submit].downvote {
+  border-top: 12px solid #534a60;
+}
+
+/* fieldset is added when the vote button has been clicked by this user, below stylings change the color */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.question-vote-form .upvoted input[type=submit].upvote {
+
+  border-bottom: 20px solid #6c7981;
+}
+
+.question-vote-form .downvoted input[type=submit].downvote {
+  border-top: 20px solid #6c7981;
+}
+
+.comment-vote-form .upvoted input[type=submit].upvote {
+  border-bottom: 8px solid #6c7981;
+}
+
+.comment-vote-form .downvoted input[type=submit].downvote {
+  border-top: 8px solid #6c7981;
+}
+
+.answer-vote-form .upvoted input[type=submit].upvote {
+  border-bottom: 12px solid #6c7981;
+}
+
+.answer-vote-form .downvoted input[type=submit].downvote {
+  border-top: 12px solid #6c7981;
+}
+
+/* total value numbers within vote form */
+.total-value {
+  text-align: center;
+  font-style: bold;
+  color: #534a60;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.question-vote-form .total-value {
+  font-size: 2em;
+}
+
+.comment-vote-form .total-value {
+  font-size: 1.25em;
+}
+
+.answer-vote-form .total-value {
+  font-size: 1.6em;
 }
