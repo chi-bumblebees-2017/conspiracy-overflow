@@ -9,7 +9,7 @@
 <h3 class="center">Add Answer</h3>
 <%= erb :_errors %>
 <form class="answer-form" method="post" action="/questions/<%= @question.id %>/answers">
-  <textarea name="body" rows="4" cols="50"></textarea>
+  <textarea name="body"></textarea>
   <br>
   <div class="center">
     <input type="submit" value="Submit">

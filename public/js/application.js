@@ -15,9 +15,9 @@ $(document).ready(function() {
     .done(function(response) {
       $('#answer-guts').append(response);
       $('.answer-form').trigger('reset');
-    }).fail(function(status) {
-      if (status === 422) {
-        alert("error: answer body cannot be blank.") }
+    }).fail(function(request, status, error) {
+      if (request.status === 422) {
+        alert(request.responseText) }
       else {
         alert("error: you must be logged in to answer.");
         window.location.href = "/sessions/new"
@@ -47,7 +47,7 @@ $(document).ready(function() {
     })
     .fail(function(request, status, error) {
       if (request.status === 422) {
-        alert("Error: comment text can't be blank");
+        alert(request.responseText);
       } else {
         alert("You must be logged in to comment");
         window.location.href = "/sessions/new"
