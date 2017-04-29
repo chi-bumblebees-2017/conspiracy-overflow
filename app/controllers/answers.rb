@@ -1,4 +1,5 @@
 post '/questions/:id/answers' do
+  # check_login
   @question = Question.find(params[:id])
   @answer = Answer.new(body: params[:body], responder_id: session[:user_id])
 
