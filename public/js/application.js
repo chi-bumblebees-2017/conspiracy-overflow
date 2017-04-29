@@ -15,8 +15,8 @@ $(document).ready(function() {
     .done(function(response) {
       $('#answer-guts').append(response);
       $('.answer-form').trigger('reset');
-    }).fail(function(status) {
-      if (status === 422) {
+    }).fail(function(request, status, error) {
+      if (request.status === 422) {
         alert("error: answer body cannot be blank.") }
       else {
         alert("error: you must be logged in to answer.");
