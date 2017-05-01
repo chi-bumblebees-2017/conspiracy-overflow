@@ -28,29 +28,26 @@ $(document).ready(function() {
 		})
 		.done(function(data){
 			$voteForm.find(".total-value").text(data);
-
-			cleanClickForm($voteForm)
 			toggleClickButton($voteForm.find("#just-clicked"));
 		})
 		.fail(function(request, status, error) {
+			if (status === 401) {
 			alert("Error: You must be logged in to vote, sheep.")
       window.location.href = "/sessions/new"
+			} else 
+			{
+				alert("There's probably a stingray nearby, try again")
+			}
 		});
 	});
 });
 
 function toggleClickButton($justClicked){
-	$justClicked.closest("fieldset").prop("disabled", true);
 	if ( $justClicked.hasClass("upvote") ) {
 		$justClicked.closest("fieldset").toggleClass("upvoted");
+		$justClicked.closest(".vote-form").find(".downvoted").removeClass("downvoted");
 	} else {
 		$justClicked.closest("fieldset").toggleClass("downvoted");
+		$justClicked.closest(".vote-form").find(".upvoted").removeClass("upvoted");
 	}
-}
-
-function cleanClickForm($voteForm){
-	var $voteButtons = $voteForm.find(".vote-button");
-	var $fieldset = $voteButtons.closest("fieldset")
-	$fieldset.removeClass("downvoted upvoted");
-	$fieldset.prop("disabled", false)
 }

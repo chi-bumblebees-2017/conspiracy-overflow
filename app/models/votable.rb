@@ -4,13 +4,21 @@ module Votable
   end
 
   def upvote_from(user)
-    destroy_vote_if_value(user, -1)
-    create_vote(user, 1) unless vote_by(user)
+    if vote_by(user).try(:value) == 1
+      undo_vote(user, 1)
+    else
+      destroy_vote_if_value(user, -1)
+      create_vote(user, 1) unless vote_by(user)
+    end
   end
 
   def downvote_from(user)
-    destroy_vote_if_value(user, 1)
-    create_vote(user, -1) unless vote_by(user)
+    if vote_by(user).try(:value) == -1
+      undo_vote(user, -1)
+    else
+      destroy_vote_if_value(user, 1)
+      create_vote(user, -1) unless vote_by(user)
+    end
   end
 
   def vote_by(user)
@@ -34,6 +42,10 @@ module Votable
         reload
       end
     end
+  end
+
+  def undo_vote(user, value)
+    destroy_vote_if_value(user, value)
   end
 
   def create_vote(user, value)
