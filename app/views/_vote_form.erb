@@ -2,13 +2,13 @@
   <input type="hidden" name="vote[votable_id]" value="<%= votable.id %>">
   <input type="hidden" name="vote[votable_type]" value="<%= votable.class %>">
   <input type="hidden" name="question_id" value="<%= @question.id %>">
-  <fieldset <% if votable.vote_match("up", current_user) %> class="upvoted" disabled <% end %>>
+  <fieldset <% if votable.vote_match("up", current_user) %> class="upvoted"<% end %>>
     <input class="upvote vote-button" type="submit" name="submit" value="Upvote">
   </fieldset>
   <div class="total-value">
     <%= votable.total_vote_value %>
   </div>
-    <fieldset <% if votable.vote_match("down", current_user) %> class="downvoted" disabled <% end %> >
+    <fieldset <% if votable.vote_match("down", current_user) %> class="downvoted" <% end %> >
       <input class="downvote vote-button" type="submit" name="submit" value="Downvote">
     </fieldset>
 </form>
