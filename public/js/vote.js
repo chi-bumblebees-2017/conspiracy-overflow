@@ -31,10 +31,10 @@ $(document).ready(function() {
 			toggleClickButton($voteForm.find("#just-clicked"));
 		})
 		.fail(function(request, status, error) {
-			if (status === 401) {
+			if (request.status === 401) {
 			alert("Error: You must be logged in to vote, sheep.")
       window.location.href = "/sessions/new"
-			} else 
+			} else
 			{
 				alert("There's probably a stingray nearby, try again")
 			}

@@ -27,6 +27,8 @@ $(document).ready(function() {
 ////////////ENDS NEW ANSWER AJAX////////////
 
 /////////////// NEW COMMENT AJAX START//////////////////
+  // Hides new comment form on doc load unless JS is disabled
+  // $(".question-show-container").find(".new-comment-form").addClass('hidden');
 
   $(".question-show-container").on("submit", ".new-comment-form", function( event ) {
     event.preventDefault();
